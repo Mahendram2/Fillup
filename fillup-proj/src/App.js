@@ -15,7 +15,7 @@ function App() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/Game">Game</Link></li>
         <li><Link to="/Village">Village</Link></li>
-        <li><Link to="/Mission">Mission</Link></li>
+        <li><Link to="/Mission">Missionn</Link></li>
       </ul>
     </nav>
     <Routes>
