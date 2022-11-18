@@ -3,7 +3,8 @@
 const Game = () => {
   return (
     <div>
-        <h1>Game</h1>
+        <img src="https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/buccaneers/ionm3z1rdzwc3kapmsn5" alt="" />
+        <h1>GMESSSSSSSS</h1>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import Game from "./components/Game";
 import Village from "./components/Village";
 import Mission from "./components/Mission";
 import './App.css';
+import PermanentDrawerLeft from "./components/PermanentDrawerLeft";
 ;
 
 
@@ -18,6 +19,8 @@ function App() {
         <li><Link to="/Mission">Missionn</Link></li>
       </ul>
     </nav>
+    <PermanentDrawerLeft/>
+    <Game />
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/Game" element={<Game />} />
