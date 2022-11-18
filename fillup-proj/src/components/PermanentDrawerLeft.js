@@ -1,3 +1,4 @@
+import { Route, Routes, Link } from "react-router-dom"
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -13,7 +14,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import {Link} from 'react-router-dom'
+import Home from "./Home";
+import Game from "./Game";
+import Village from "./Village";
+import Mission from "./Mission";
+// import {Link} from 'react-router-dom'
 
 const drawerWidth = 240;
 
@@ -21,6 +26,9 @@ export default function PermanentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' ,justifyContent: 'center' }}>
       <CssBaseline />
+      <div>
+        
+      </div>
       <AppBar
         position="fixed"
         sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
@@ -40,7 +48,10 @@ export default function PermanentDrawerLeft() {
         anchor="left"
       >
         <Toolbar />
-        <h1>Fill Up</h1>
+        <div className="">
+          <h1>Fill Up</h1>
+        </div>
+        
         <Divider />
         {/* <List>
           {[<Link to="/Game"> Game</Link>, 'My Village', 'Todays Mission'].map((text, index) => (
@@ -69,7 +80,12 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <Typography paragraph>
-          
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Game" element={<Game />} />
+          <Route path="/Village" element={<Village />} />
+          <Route path="/Mission" element={< Mission/>} />
+        </Routes>
         </Typography>
         
             

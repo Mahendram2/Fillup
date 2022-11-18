@@ -11,23 +11,7 @@ import PermanentDrawerLeft from "./components/PermanentDrawerLeft";
 function App() {
   return (
     <>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/Game">Game</Link></li>
-        <li><Link to="/Village">Village</Link></li>
-        <li><Link to="/Mission">Missionn</Link></li>
-      </ul>
-    </nav>
     <PermanentDrawerLeft/>
-    <Game />
-    <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/Game" element={<Game />} />
-    <Route path="/Village" element={<Village />} />
-    <Route path="/Mission" element={< Mission/>} />
-    </Routes>
-     
     </>
   )
  
