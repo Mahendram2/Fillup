@@ -18,6 +18,7 @@ import Home from "./Home";
 import Game from "./Game";
 import Village from "./Village";
 import Mission from "./Mission";
+import Customize from "./Customize";
 // import {Link} from 'react-router-dom'
 
 const drawerWidth = 240;
@@ -29,12 +30,7 @@ export default function PermanentDrawerLeft() {
       <div>
         
       </div>
-      <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
-      >
-        <h2>Customize your Bottle</h2>
-      </AppBar>
+      
       <Drawer
         sx={{
           width: drawerWidth,
@@ -49,28 +45,20 @@ export default function PermanentDrawerLeft() {
       >
         <Toolbar />
         <div className="">
-          <h1>Fill Up</h1>
+          <h1><Link to="/">Fill Up</Link></h1>
         </div>
         
         <Divider />
-        {/* <List>
-          {[<Link to="/Game"> Game</Link>, 'My Village', 'Todays Mission'].map((text, index) => (
+        <List>
+          {[<Link to="/Game"> Game</Link>, <Link to="/Village">Village</Link>,<Link to="/Mission">Mission</Link>,<Link to="/Customize">Customize</Link>].map((text) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
             </ListItem>
           ))}
-        </List> */}
-        <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/Game">Game</Link></li>
-        <li><Link to="/Village">Village</Link></li>
-        <li><Link to="/Mission">Missionn</Link></li>
-        </ul>
+        </List>
+        
        
         
       </Drawer>
@@ -85,6 +73,7 @@ export default function PermanentDrawerLeft() {
           <Route path="/Game" element={<Game />} />
           <Route path="/Village" element={<Village />} />
           <Route path="/Mission" element={< Mission/>} />
+          <Route path="/Customize" element={< Customize/>} />
         </Routes>
         </Typography>
         
