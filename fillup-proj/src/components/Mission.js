@@ -1,11 +1,13 @@
 import React from 'react'
-
+import './Mission.css'
 const Mission = () => {
   return (
-    <div>
-        <h1>Mission</h1>
-        <img src="https://www.boardeffect.com/wp-content/uploads/2018/10/The-Role-of-the-Nonprofit-Board-in-Building-a-Strong-Mission-Statement.jpg"></img>
-        <p>your mission goes here</p>
+    <div className='mission-container'>
+        <h1>Today's News</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6yCAPAqXodc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>Your mission</h2>
+        <h3 className='today-text'>Today, the village is low on clean water, please collect <span>20 liters of clean water</span> to save the village.</h3>
+        <h3>We need your help!</h3>
     </div>
   )
 }
