@@ -144,7 +144,7 @@ const Home = () => {
             </div>
             
           <p>
-          Read more at: <u><a href="https://www.usbr.gov/mp/arwec/water-facts-ww-water-sup.html" target="_blank" rel="noopener noreferrer">Water Facts - Worldwide Water Supply | ARWEC| CCAO | Area Offices | California-Great Basin | Bureau of Reclamation (usbr.gov) </a></u>
+          Read more at: <u><a href="https://www.usbr.gov/mp/arwec/water-facts-ww-water-sup.html" target="_blank" rel="noopener noreferrer">Water Facts - Worldwide Water Supply | (usbr.gov) </a></u>
           </p>
           <div className="flex justify-end">
             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
