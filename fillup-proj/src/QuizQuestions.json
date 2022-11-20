@@ -1,0 +1,30 @@
+[
+    
+    {
+    "question": "How many gallons of water does the average shower use?",
+    "incorrectAnswers": [ "13 Gallons", "20 Gallons", "10 Gallons"],
+    "correctAnswer": "17 Gallons",
+    "explanation": "The average American shower water usage is 17.2 gallons with the average shower length being 8.2 minutes. The average flow rate is 2.1 gallons per minute.",
+    "url": "http://www.google.com/",
+    "points": 20
+    },
+   
+    {
+    "question": "What is the percentage of the earth's water is fresh water?",
+    "incorrectAnswers": [ "17%", "32", "25"],
+    "correctAnswer": "3%",
+    "explanation": "Of all the water that exists on our planet, roughly 97% is saltwater and less than 3% is freshwater. Most of the Earth’s freshwater is frozen in glaciers, ice caps, or is deep underground in aquifers.",
+    "url": "http://www.google.com/",
+    "points": 25
+    },
+   
+    {
+    "question": "Last Question",
+    "incorrectAnswers": [ "First", "Third", "Forth"],
+    "correctAnswer": "Second",
+    "explanation": "I dont Know",
+    "url": "http://www.google.com/",
+    "points": 30
+    }
+   
+]
