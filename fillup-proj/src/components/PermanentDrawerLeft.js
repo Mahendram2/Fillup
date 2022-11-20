@@ -3,29 +3,24 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
+import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-<<<<<<< HEAD
-
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
-=======
-import ListItemText from '@mui/material/ListItemText';
->>>>>>> origin/main
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 import Home from "./Home";
 import Game from "./Game";
 import Village from "./Village";
 import Mission from "./Mission";
 import Customize from "./Customize";
-
+import Win from "./Win";
+// import {Link} from 'react-router-dom'
 
 const drawerWidth = 240;
 
@@ -38,12 +33,14 @@ export default function PermanentDrawerLeft() {
       </div>
       
       <Drawer
+      
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor:"#C1D9FB"
           },
         }}
         variant="permanent"
@@ -80,6 +77,7 @@ export default function PermanentDrawerLeft() {
           <Route path="/Village" element={<Village />} />
           <Route path="/Mission" element={< Mission/>} />
           <Route path="/Customize" element={< Customize/>} />
+          <Route path="/Win/:score" element={<Win/>} />
         </Routes>
         </Typography>
         
