@@ -1,0 +1,29 @@
+<<<<<<< HEAD
+.mission-container {
+  background: #c1d9fb;
+<<<<<<< Updated upstream
+  height: 80vh;
+  margin: 4rem;
+=======
+  height: 100%;
+  margin: 3rem;
+  padding: 4rem;
+=======
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.mission-container {
+  background: #c1d9fb;
+  height: 60vh;
+  margin: 3rem;
+  padding: 2rem;
+>>>>>>> origin/main
+  font-family: "Raleway", sans-serif;
+}
+
+.today-text {
+  font-weight: thin;
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> origin/main
+}
