@@ -19,6 +19,7 @@ import Game from "./Game";
 import Village from "./Village";
 import Mission from "./Mission";
 import Customize from "./Customize";
+import Win from "./Win";
 // import {Link} from 'react-router-dom'
 
 const drawerWidth = 240;
@@ -32,12 +33,14 @@ export default function PermanentDrawerLeft() {
       </div>
       
       <Drawer
+      
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            backgroundColor:"#C1D9FB"
           },
         }}
         variant="permanent"
@@ -74,6 +77,7 @@ export default function PermanentDrawerLeft() {
           <Route path="/Village" element={<Village />} />
           <Route path="/Mission" element={< Mission/>} />
           <Route path="/Customize" element={< Customize/>} />
+          <Route path="/Win/:score" element={<Win/>} />
         </Routes>
         </Typography>
         

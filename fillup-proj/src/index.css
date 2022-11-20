@@ -15,3 +15,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body { margin:10% 10%; }
+li.water-bottle { float:left;margin-right:15px;}
+ul { list-style-type:none; }
+
+.bottle { background: #ddd; width:100%;border-radius:56px 56px 12px 12px; height:400px; padding:6px;box-shadow: 6px 6px 6px #efefef;margin-bottom:8px;}
+
+
+
+.cap { background: #ddd; margin:0 50px;width:120px;border-radius:16px 16px 16px  12px; height:70px;border-top:2px solid #ddd; border-bottom:4px dotted #efefef;}
+.cap-top { background:#ededed; height:12px; border-radius:20px 20px 0 0; }
+.cap-seal { margin-top:40px;background:#ccc; height:6px; border-radius: 0 0 20px 20px; }
+
+.water-full { background: lightblue ;width:100%;margin-top:10px;height:377px; z-index:1;border-radius:36px 36px 5px 5px;}
+.water-medium { background: lightblue; width:100%;height:258px;margin-top:130px; z-index:1;border-radius:36px 36px 5px 5px;}
+.water-low { background: lightblue ;width:100%;height:125px; margin-top:265px;z-index:1;border-radius:36px 36px 5px 5px;}
+.water-empty { background: lightblue ;width:100%;height:15px; margin-top:373px;z-index:1;border-radius:36px 36px 5px 5px;}
+
