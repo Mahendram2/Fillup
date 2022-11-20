@@ -1,5 +1,16 @@
 .mission-container {
   background: #c1d9fb;
+<<<<<<< Updated upstream
   height: 80vh;
   margin: 4rem;
+=======
+  height: 100%;
+  margin: 3rem;
+  padding: 4rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.today-text {
+  font-weight: thin;
+>>>>>>> Stashed changes
 }
