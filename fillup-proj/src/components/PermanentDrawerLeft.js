@@ -3,22 +3,29 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+<<<<<<< HEAD
 
 import ListItemText from '@mui/material/ListItemText';
 
+=======
+import ListItemText from '@mui/material/ListItemText';
+>>>>>>> origin/main
 import Home from "./Home";
 import Game from "./Game";
 import Village from "./Village";
 import Mission from "./Mission";
 import Customize from "./Customize";
-// import {Link} from 'react-router-dom'
+
 
 const drawerWidth = 240;
 
