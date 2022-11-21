@@ -1,11 +1,13 @@
 import React from 'react'
+import { FaRegNewspaper } from 'react-icons/fa'
+// **MUST** - npm i react-icons
 
 import './Mission.css'
 const Mission = () => {
   return (
     <div className='mission-container'>
         <div className='flex justify-center mb-6'>
-        <h1 >Today's News</h1>
+        <h1 > <FaRegNewspaper />Today's News</h1>
         </div>
         <div className='flex justify-center mb-6'>
           <div>
@@ -15,7 +17,7 @@ const Mission = () => {
         <div className='flex justify-center mb-6'> 
           <h2>Your mission</h2>
         </div>
-        <h3 className='flex justify-center'>Today, the village is low on clean water, please collect  20 liters of clean water to save the village.</h3>
+        <h3 className='flex justify-center'>Today, the village is low on clean water, please collect <strong> 20 liters of clean water </strong>   to save the village.</h3>
         <h3 className='flex justify-center'>We need your help!</h3>
     </div>
   )
