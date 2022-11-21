@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const dataFlasks = [
   {
     id: 1,
     name: 'Chose Your Style',
-    colors: ['#A1E52C', '#01B8E5', '#C92C49', 'red','orange', '#888C8D'],
+    colors: ['#A1E52C', '#01B8E5', '#C92C49', 'red','orange', '#888C8D', 'white','olive','black','#87acc7','#264e68','#0096b1'],
     checkImg: {
       '#A1E52C': false,
       '#01B8E5': true,
@@ -13,6 +14,12 @@ const dataFlasks = [
       'red': false,
       'orange': false,
       '#888C8D': false,
+      'white': false,
+      'olive':false,
+      'black':false,
+      '#264e68': false,
+      '#0096b1': false,
+      '#87acc7': false,
     },
 
     linkImg: {
@@ -28,7 +35,19 @@ const dataFlasks = [
 
       'orange' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx827-starfish-straighton.jpg',
 
-      '#888C8D' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx010-stone-straighton.jpg'
+      'olive' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx306-olive-straighton.jpg',
+
+      'black' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx001-black-straighton.jpg',
+      
+      'white' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx110-white-straighton.jpg',
+
+      '#264e68' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx464-indigo-straighton.jpg',
+
+      '#0096b1' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx454-laguna-straighton.jpg',
+
+      '#888C8D' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx010-stone-straighton.jpg',
+
+      '#87acc7' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx417-rain-straighton.jpg'
     },
   }
   
@@ -57,13 +76,13 @@ const Home = () => {
   };
   return (
     <div>
-        <div class="flex">
-        <div className="App">
-      <div className="fade" />
+      
+        <div className="flex justify-center">
+      
       <div className="content">
         <div className="d-flex">
           {bottle.map((bottles) => (
-            <div key={bottles.id} className="cart">
+            <div key={bottles.id} className="flex">
               {/* Render ImG  */}
               {/* If Checkimg property true => render img with that property
                */}
@@ -75,30 +94,47 @@ const Home = () => {
                       src={bottles.linkImg[item]}
                       alt={bottles.name}
                       className="img"
+                      width="700px"
                     />
                   );
                 } else {
                   return null;
                 }
               })}
-              <div className="colors d-flex">
-                {bottles.colors.map((color) => (
-                  <p
-                    key={color}
-                    className={` ${bottles.checkImg[color] && 'active'}   `}
-                    style={{
-                      backgroundColor: color,
-                      width: 40,
-                      height: 40,
-                      borderRadius: '50%',
-                      marginRight: 10,
-                      cursor: 'pointer',
-                    }}
-                    onClick={() => handleChooseColor(bottles.id, color)}
-                  ></p>
-                ))}
-              </div>
-              <p>{bottles.name}</p>
+              
+            
+                <div className='container flex flex-wrap  justify-center items-center'>
+                  <div>
+                    <div className='grid grid-cols-3 gap-4'>
+                      {bottles.colors.map((color) => (
+                                        <p
+                                          key={color}
+                                          className={` ${bottles.checkImg[color] && 'active'}  hover:border-orange-50 border-solid border-2 border-stone-500 `}
+                                          style={{
+                                            backgroundColor: color,
+                                            width: 40,
+                                            height: 40,
+                                            borderRadius: '50%',
+                                            marginRight: 10,
+                                            cursor: 'pointer',
+                                          }}
+                                          onClick={() => handleChooseColor(bottles.id, color)}
+                                        ></p>
+                                      ))}
+                    </div >
+                    <div className='flex justify-center'>
+                      <Link to="/mission">
+                      <button class="bg-transparent flex  hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 mt-7 border border-blue-500 hover:border-transparent rounded">
+                         Done 
+                      </button>
+                      </Link>
+                      </div>
+                    
+                  </div>
+                 
+                                    
+                                  </div>
+            
             </div>
           ))}
         </div>
@@ -106,55 +142,11 @@ const Home = () => {
 
 
       </div>
-        <div className="container">
-          <p className="p-container">
-          We all want to do our part to help our planet and sustainability.
-           Understanding the cycle of water and how each of us can do a little every day to stay hydrated and keep the planet happy. 
-           </p>
-           <br/>
-           
-          <h1 className="">
-            <strong>Water Facts - Worldwide Water Supply</strong>
-          </h1>
-            <div className="ml-5">
-              <ul className="list-disc">
-              <li>
-                Water covers about 71% of the earth's surface.
-              </li>
-              <li>
-                326 million cubic miles of water on the planet
-              </li>
-              <li>
-              97% of the earth's water is found in the oceans (too salty for drinking, growing crops, and most industrial uses except cooling).
-              </li>
-              <li>
-              2.5% of the earth's fresh water is unavailable: locked up in glaciers, polar ice caps, atmosphere, and soil; highly polluted; or lies too far under the earth's surface to be extracted at an affordable cost.
-              </li>
-              <li>
-              0.5% of the earth's water is available fresh water.
-              </li>
-              <li>
-              If the world's water supply were only 100 liters (26 gallons), our usable water supply of fresh water would be only about 0.003 liter (one-half teaspoon).
-              </li>
-              <li>
-              In actuality, that amounts to an average of 8.4 million liters (2.2 million gallons) for each person on earth.
-              </li>
-            </ul>
-            <br/>
-            </div>
-            
-          <p>
-          Read more at: <u><a href="https://www.usbr.gov/mp/arwec/water-facts-ww-water-sup.html" target="_blank" rel="noopener noreferrer">Water Facts - Worldwide Water Supply | (usbr.gov) </a></u>
-          </p>
-          <div className="flex justify-end">
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            Start
-          </button>
-          </div>
-          
-        </div>
+      <div  />
+      <div className='justify-center flex m-5'>
+        
       </div>
-       
+      
     </div>
   )
 }
