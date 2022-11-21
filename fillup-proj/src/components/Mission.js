@@ -23,7 +23,6 @@ const Mission = () => {
         </div>
         <h3 className='flex justify-center font-Raleway'>
           <div>
-          Today, the village is low on clean water, please collect   <strong className='font-Raleway'>  20 liters of clean water </strong>to save the village.
           </div></h3>
         <h3 className='flex justify-center font-Raleway'>We need your help!</h3>
         <div className='flex justify-center mb-8'>

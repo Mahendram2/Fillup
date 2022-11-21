@@ -3,3 +3,11 @@
 .mission-container {
 
 }
+h1 {
+  font-size: 24px;
+  font-style: italic;
+}
+ strong {
+  padding-left: 5px;
+  padding-right: 5px;
+ }
