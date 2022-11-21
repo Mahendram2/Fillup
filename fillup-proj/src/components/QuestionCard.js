@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import {MdShower , MdClose} from "react-icons/md"
+
 
 const QuestionCard = (props) => {
 
@@ -31,15 +33,15 @@ const QuestionCard = (props) => {
          e.target.style.backgroundColor = "#C91515"
          console.log(props.worth)
          console.log("inside here ")
-         totalIncorrect += 5
+         totalIncorrect += 25
          console.log(totalIncorrect)
-         props.setTotal(props.total -5)
-        props.setWorth(props.question.points -5) 
+         props.setTotal(props.total -25)
+        props.setWorth(props.question.points -25) 
         console.log(props.worth)
       
       setMessage(
         <div className="flex text-[#C91515] justify-center mb-8">
-        <h1> Wrong Answer try again ! </h1>
+        <h1> Not quite, let's learn about it ! </h1>
        </div>
        )
       }
@@ -50,7 +52,7 @@ const QuestionCard = (props) => {
       return <div>
                 <button onClick={wrongChoice} style={{width:"254px" , height:"76px" , backgroundColor:"" }} class="bg-[#2C73D9]  hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 ">      
               
-                   {ind} {incorrectAnswer} 
+                  {incorrectAnswer} 
                 </button>
             </div>
     })
@@ -139,11 +141,11 @@ const QuestionCard = (props) => {
                       class="modal-header flex flex-shrink-0 items-center justify-between p-3 -b  rounded-t-md">
                          <button type="button"
                          onClick={closePopUp}
-                        class="btn-close box-content w-4 h-4  text-black border-none rounded-none opacity-60 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-                        data-bs-dismiss="modal" aria-label="Close"><img src="https://www.clipartmax.com/png/small/1-10194_clip-art-x-medium-size-x-marks-the-spot-clipart.png"/></button>
+                        class="btn-close box-content text-black border-none text-3xl rounded-none opacity-60 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                        data-bs-dismiss="modal text-red" aria-label="Close"><MdClose/></button>
                     
-                        <div className="flex justify-center p-1">
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvIEIgf6ozo1fpLNN9usqiVBuHiJ8k51w5Ig&usqp=CAU" width="65px"/>
+                        <div className="flex justify-center p-1 text-4xl">
+                          <MdShower/>
                         </div>
                         <button type="button"
                         class="btn-close box-content w-4 h-4  text-black border-none rounded-none opacity-0 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"

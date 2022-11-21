@@ -1,5 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import rain from './images/rain.png';
+import black from './images/black.png'
+import goji from './images/goji.png';
+import indigo from './images/indigo.png'
+import laguna from './images/laguna.png';
+import olive from './images/olive.png'
+import pacific from './images/pacific.png';
+import seagrass from './images/seagrass.png'
+import snapper from './images/snapper.png';
+import starfish from './images/starfish.png'
+import stone from './images/stone.png';
+
+
 
 
 const dataFlasks = [
@@ -24,38 +37,40 @@ const dataFlasks = [
 
     linkImg: {
       '#A1E52C':
-        'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx321-seagrass-straighton.jpg',
+        `${seagrass}`,
 
       '#01B8E5':
-        'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx415-pacific-straighton.jpg',
+        `${pacific}`,
 
-      '#C92C49': 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx604-snapper-straighton.jpg',
+      '#C92C49': `${snapper}`,
 
-      'red' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx612-goji-straighton.jpg',
+      'red' : `${goji}`,
 
-      'orange' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx827-starfish-straighton.jpg',
+      'orange' :`${starfish}`,
 
-      'olive' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx306-olive-straighton.jpg',
+      'olive' : `${olive}`,
 
-      'black' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx001-black-straighton.jpg',
+      'black' : `${black}`,
       
       'white' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx110-white-straighton.jpg',
 
-      '#264e68' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx464-indigo-straighton.jpg',
+      '#264e68' : `${indigo}`,
 
-      '#0096b1' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx454-laguna-straighton.jpg',
+      '#0096b1' : `${laguna}`,
 
-      '#888C8D' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx010-stone-straighton.jpg',
+      '#888C8D' : `${stone}`,
 
-      '#87acc7' : 'https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/s/2/s24sx417-rain-straighton.jpg'
+      '#87acc7' :  `${rain}` 
     },
   }
   
 ];
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props)
   const [bottle, setBottles] = useState(dataFlasks);
   const handleChooseColor = (id, color) => {
+    
     setBottles((prev) => {
       return prev.map((bottles) => {
         if (bottles.id === id) {
@@ -63,6 +78,7 @@ const Home = () => {
 
           Object.keys(bottles.checkImg).map((item) => {
             bottles.checkImg[item] = false;
+            
             newCheckImg = { ...bottles.checkImg, [color]: true };
             return null;
           });
@@ -88,6 +104,7 @@ const Home = () => {
                */}
               {Object.keys(bottles.checkImg).map((item) => {
                 if (bottles.checkImg[item]) {
+                  {props.setBottle(bottles.linkImg[item])}
                   return (
                     <img
                       key={item}

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         Montserrat: ['Montserrat', 'sans-serif'],
         Raleway: ['Raleway', 'sans-serif'],
+        BadScript: ['Bad Script']
       }, //end of fontFamily
     },
   },
