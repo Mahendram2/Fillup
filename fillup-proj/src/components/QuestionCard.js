@@ -3,29 +3,56 @@ import { useEffect, useState } from "react"
 const QuestionCard = (props) => {
 
 
-    console.log(props)
     const [incorrect,setIncorrect] = useState(props.question.incorrectAnswers)
     const [popUp,setPopUp] = useState(false)
     const [message,setMessage] = useState()
     const [sortedAnswer,setSortedAnswer] = useState()
-    const [solved,setSolved] = useState("#2C73D9")
+    let totalIncorrect = 0
+    let block = false
+    let deducted = false
+
+    
 
     useEffect(()=>{
-      console.log("a state has changed but no changes made")
-    },[solved])
-    const wrongChoice = () =>{
+      console.log(props.total)
+    },[props.total])
+
+    useEffect(()=>{
+      console.log(props.waterLevel)
+      props.setWorth(props.question.points) 
+    },[props.worth])
+
+    useEffect(()=>{
+      console.log(totalIncorrect,"changing")
+    },[totalIncorrect])
+    
+    const wrongChoice = (e) =>{
+      if(!block){
+         e.target.style.backgroundColor = "#C91515"
+         console.log(props.worth)
+         console.log("inside here ")
+         totalIncorrect += 5
+         console.log(totalIncorrect)
+         props.setTotal(props.total -5)
+        props.setWorth(props.question.points -5) 
+        console.log(props.worth)
+      
       setMessage(
         <div className="flex text-[#C91515] justify-center mb-8">
         <h1> Wrong Answer try again ! </h1>
        </div>
        )
+      }
+     
     }
 
     const options = incorrect.map((incorrectAnswer,ind)=>{
-      return <button onClick={wrongChoice} style={{width:"254px" , height:"76px" }} class="bg-[#2C73D9] focus:bg-[#C91515] hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 ">      
-      <div   key={ind}>
-              <p> {ind} {incorrectAnswer} </p>
-          </div></button>
+      return <div>
+                <button onClick={wrongChoice} style={{width:"254px" , height:"76px" , backgroundColor:"" }} class="bg-[#2C73D9]  hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 ">      
+              
+                   {ind} {incorrectAnswer} 
+                </button>
+            </div>
     })
     
     useEffect(()=>{
@@ -35,14 +62,22 @@ const QuestionCard = (props) => {
     const closePopUp = () =>{
       setPopUp(false)
     }
-    const openPopUp = () =>{
-      setSolved ("#15C91C")
-      setPopUp(true)
-      setMessage(
-      <div className="flex text-[#15C91C] justify-center mb-8">
-      <h1> correct ! </h1>
+    const openPopUp = (e) =>{
+      e.target.style.backgroundColor = "#15C91C"
+      if(!block){
+        console.log()
+              props.setWaterLevel( props.waterLevel + Number(props.worth))
+              console.log(props.worth)
+              console.log( props.total + totalIncorrect)
+              props.setTotal(props.total + props.question.points-totalIncorrect)
+              block = true
+              setPopUp(true)
+              setMessage(
+              <div className="flex text-[#15C91C] justify-center mb-8">
+              <h1> correct ! </h1>
      </div>
      )
+    }
     }
     const nextQuestion =() =>{
       props.correctAnswer()
@@ -58,10 +93,8 @@ const QuestionCard = (props) => {
     //     <p> {options.length} {props.question.correctAnswer} </p>
     // </div></button>
     <div>
-<button type="button" onClick={openPopUp}  style={{width:"254px" , height:"76px", backgroundColor:`${solved}` }} className={` hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700`}>
-      <div key={options.length}>
-             <p> {options.length} {props.question.correctAnswer} </p>
-      </div>
+<button type="button" onClick={openPopUp}  style={{width:"254px" , height:"76px", }} className={`bg-[#2C73D9] hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700`}>
+            {props.question.correctAnswer}
 </button>
 
 
